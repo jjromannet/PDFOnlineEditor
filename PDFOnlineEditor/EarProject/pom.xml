@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>PDFOnlineEditor</artifactId>
+        <groupId>PDFOnlineEditorGroupId</groupId>
+        <version>2.0</version>
+    </parent>
+    <groupId>PDFOnlineEditorGroupId.EarProject</groupId>
+    <artifactId>EarProject</artifactId>
+    <version>2.0</version>
+    <name>EarProject</name>
+    <url>http://maven.apache.org</url>
+    <packaging>ear</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>PDFOnlineEditorGroupId.model</groupId>
+            <artifactId>Model</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>PDFOnlineEditorGroupId.EjbPdfConverter</groupId>
+            <artifactId>EjbPdfConverter</artifactId>
+            <version>2.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>PDFOnlineEditorGroupId.EjbLayerManager</groupId>
+            <artifactId>EjbLayerManager</artifactId>
+            <version>2.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>PDFOnlineEditorGroupId.EjbUserManager</groupId>
+            <artifactId>EjbUserManager</artifactId>
+            <version>2.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>PDFOnlineEditorGroupId.WebModule</groupId>
+            <artifactId>WebModule</artifactId>
+            <version>2.0</version>
+            <type>war</type>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <finalName>PDFOnlineEditorEAR</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+
+                    <modules>
+
+                        <javaModule>
+                            <groupId>PDFOnlineEditorGroupId.model</groupId>
+                            <artifactId>Model</artifactId>
+                        </javaModule>
+
+                        <ejbModule>
+                            <groupId>PDFOnlineEditorGroupId.EjbPdfConverter</groupId>
+                            <artifactId>EjbPdfConverter</artifactId>
+                        </ejbModule>
+                        <ejbModule>
+                            <groupId>PDFOnlineEditorGroupId.EjbLayerManager</groupId>
+                            <artifactId>EjbLayerManager</artifactId>
+                        </ejbModule>
+                        <ejbModule>
+                            <groupId>PDFOnlineEditorGroupId.EjbUserManager</groupId>
+                            <artifactId>EjbUserManager</artifactId>
+                        </ejbModule>
+
+                        <webModule>
+                            <groupId>PDFOnlineEditorGroupId.WebModule</groupId>
+                            <artifactId>WebModule</artifactId>
+                            <contextRoot>WebModule</contextRoot>
+                        </webModule>
+
+                        <!-- 4.5.4. Maven will also treat dependent 3-rd-party libraries as modules.
+                        You have to exclude them or redirect to "APP-INF/lib" directory. 
+            <javaModule>
+              <groupId>antlr</groupId>
+              <artifactId>antlr</artifactId>
+              <bundleDir>APP-INF/lib</bundleDir>
+            </javaModule>-->
+
+                    </modules>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
