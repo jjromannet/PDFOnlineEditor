@@ -88,15 +88,6 @@
                             <artifactId>WebModule</artifactId>
                             <contextRoot>WebModule</contextRoot>
                         </webModule>
-
-                        <!-- 4.5.4. Maven will also treat dependent 3-rd-party libraries as modules.
-                        You have to exclude them or redirect to "APP-INF/lib" directory. 
-            <javaModule>
-              <groupId>antlr</groupId>
-              <artifactId>antlr</artifactId>
-              <bundleDir>APP-INF/lib</bundleDir>
-            </javaModule>-->
-
                     </modules>
                 </configuration>
             </plugin>
