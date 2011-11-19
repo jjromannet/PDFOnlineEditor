@@ -3,27 +3,34 @@
  
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
  
 <h:head>
-  <title>JSF Demo</title>
+    <title>Uppercase string by Ajax in JSF 2</title>
 </h:head>
+
 <h:body>
-  <h:outputScript name="jsf.js" library="javax.faces" target="body">
-</h:outputScript>
-  <h1>Ajax JSF 2 Demo</h1>
-  <h:form>
- 
-    <h:inputText id="name" value="#{testJsfBackendBean.name}">
-      <f:ajax render="reverseName"/>
-    </h:inputText>
- 
-    <h:commandButton value="Say reverse Hi via Ajax">
-      <f:ajax execute="name" render="reverseName"/>
-    </h:commandButton>
-    <h:outputText id="reverseName" value="#{testJsfBackendBean.reverseName}"/>
-  </h:form>
- 
-</h:body>
+    <h:outputScript name="jsf.js" library="javax.faces" target="body">
+    </h:outputScript>
+    
+    <h1>Uppercase string by Ajax in JSF 2</h1>
+    
+    <h:form>
+        <h:inputText id="title" value="#{testJSFBackendBean.title}">
+            <f:ajax render="uppercasedTitle"/>
+        </h:inputText>
+
+        <h:commandButton value="get uppercased string from Ajax">
+            <f:ajax execute="title" render="uppercasedTitle"/>
+        </h:commandButton>
+
+        <p>uppercased title is: 
+            <b><h:outputText id="uppercasedTitle" value="#{testJSFBackendBean.uppercasedTitle}"/></b>
+        </p>
+        
+    </h:form>
+
+</h:body> 
+
 </html>
