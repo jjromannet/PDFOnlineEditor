@@ -1,0 +1,16 @@
+The project has been written from the scratch. There is no copy-pasted 
+parts of any other existing project. However during development I was 
+using several interesting resources which could have major influence on 
+my source code. Such resources will be listed here.
+
+In this document I will put all resources containing source code which were
+used during development or which were used as an example/base for further 
+development. 
+
+project structure and POM definitions
+[1] Fang
+http://www.xinotes.org/notes/note/586/
+
+Add JSF2 support
+[2] Oliver Wehrens
+http://maxheapsize.com/2009/07/03/getting-started-with-jsf-2-and-maven/
